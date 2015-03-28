@@ -111,10 +111,13 @@
   </PropertyGroup>
   <ItemGroup>
     <Content Include="game.html" />
+    <Content Include="highscores.html" />
     <Content Include="images\stars.jpg" />
     <Content Include="images\white_circle.png" />
     <Content Include="merges\android\scripts\android2.3-jscompat.js" />
     <Content Include="merges\android\scripts\platformOverrides.js" />
+    <Content Include="settings.html" />
+    <Content Include="transactions.html" />
     <Folder Include="merges\ios\" />
     <Content Include="merges\windows\scripts\platformOverrides.js" />
     <Content Include="merges\windows\scripts\winstore-jscompat.js" />

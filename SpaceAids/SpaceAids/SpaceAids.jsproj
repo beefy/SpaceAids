@@ -110,7 +110,6 @@
     <VisualStudioVersion>12.0</VisualStudioVersion>
   </PropertyGroup>
   <ItemGroup>
-    <Content Include="game.html" />
     <Content Include="highscores.html" />
     <Content Include="images\stars.jpg" />
     <Content Include="images\white_circle.png" />

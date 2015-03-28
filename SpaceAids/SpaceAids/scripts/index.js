@@ -36,7 +36,8 @@ function gameStart() {
     margin_btm_num_1 = -625;
 
     //make main screen items hidden
-
+    $("#content").css("visibility", "hidden");
+    $("#logo").css("visibility", "hidden");
 }
 
 function starsMove() {

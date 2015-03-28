@@ -8,12 +8,49 @@
     <link href="css/index.css" rel="stylesheet" />
 </head>
 <body>
-    <p>Loading Space Aids</p>
 
     <!-- Cordova reference, this is added to your app when it's built. -->
     <script src="cordova.js"></script>
     <script src="scripts/platformOverrides.js"></script>
 
     <script src="scripts/index.js"></script>
+
+    <!-- stars background -->
+    <img src="images/stars.jpg" class="stars" />
+
+    <!-- logo -->
+    <p class="logo">SPACE AIDS</p>
+
+    <!-- boxes -->
+    <!--SCROLLING FEED-->
+    <div id="content" class="feed">
+        <div id="feed_table">
+            <div class="feed_table_row" onclick="window.location.replace('study.html')">
+                <div class="feed_table_cell">
+                    <img src="images/white_circle.png" class="white_background"/>
+                    <label>PLAY</label>
+                </div>
+            </div>
+
+            <div class="feed_table_row">
+                <div class="feed_table_cell" onclick="window.location.replace('study.html')">
+                    <label>HIGHSCORES</label>
+                </div>
+            </div>
+
+            <div class="feed_table_row">
+                <div class="feed_table_cell" onclick="window.location.replace('study.html')">
+                    <label>SETTINGS</label>
+                </div>
+            </div>
+
+            <div class="feed_table_row">
+                <div class="feed_table_cell" onclick="window.location.replace('study.html')">
+                    <label>TRANSACTIONS</label>
+                </div>
+            </div>
+        </div>
+    </div>
+    
 </body>
 </html>

@@ -38,10 +38,11 @@ function gameStart() {
     margin_top_num_2 = -625;
 
     //make main screen items hidden
-    $("#content").css("visibility", "hidden");
+    $("#main_module").css("visibility", "hidden");
     $("#logo").css("visibility", "hidden");
 
     //make game screen items visible
+    $("#game_module").css("visibility", "visible");
 
 }
 

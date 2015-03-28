@@ -78,3 +78,14 @@ div {
 #feed_table {
     display:list-item;
 }
+
+#player {
+    width:25%;
+    height:25%;
+  margin-left: 37%;
+}
+
+#game_module {
+    
+    margin-top:-60%;
+}

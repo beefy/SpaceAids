@@ -13,20 +13,22 @@
     <script src="cordova.js"></script>
     <script src="scripts/platformOverrides.js"></script>
 
+    <!-- JQuery -->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+
     <script src="scripts/index.js"></script>
 
     <!-- stars background -->
-    <img src="images/stars.jpg" class="stars" />
+    <img src="images/stars.jpg" id="stars" class="stars" />
 
     <!-- logo -->
     <p class="logo">SPACE AIDS</p>
 
-    <!-- boxes -->
     <!--SCROLLING FEED-->
     <div id="content" class="feed">
         <div id="feed_table">
             <!--<img src="images/white_circle.png" class="white_background" />-->
-            <div class="feed_table_row" onclick="window.location.replace('game.html')">
+            <div class="feed_table_row" onclick="gameStart();">
 
                 <div class="feed_table_cell">
                     <label>PLAY</label>

@@ -29,6 +29,30 @@ div {
     z-index: -1;
 }
 
+#stars {
+    
+    height: 100%;
+    width: 100%;
+    margin-bottom: -625px;
+    z-index: -1;
+}
+
+#stars1 {
+    height: 100%;
+    width: 100%;
+    margin-bottom: -170%;
+    z-index: -1;
+
+}
+
+#stars2 {
+    height: 100%;
+    width: 100%;
+    margin-bottom: -170%;
+    z-index: -1;
+
+}
+
 .white_background {
     background-size:cover;
     z-index: -1;

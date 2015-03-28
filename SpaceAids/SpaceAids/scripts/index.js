@@ -21,5 +21,30 @@
 
     function onResume() {
         // TODO: This application has been reactivated. Restore application state here.
+
+
+        gameStart();
     };
-} )();
+})();
+
+var margin_top_num_1 = 0;
+var margin_top_num_2 = 0;
+var margin_btm_num_1 = 0;
+
+function gameStart() {
+    starsMove();
+    margin_btm_num_1 = -625;
+
+    //make main screen items hidden
+
+}
+
+function starsMove() {
+
+    margin_top_num_1++;
+    margin_btm_num_1--;
+    $("#stars").css("margin-top", margin_top_num_1 + "px");
+    $("#stars").css("margin-bottom", margin_btm_num_1 + "px");
+
+    setTimeout(starsMove, 5);
+}

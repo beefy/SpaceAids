@@ -30,22 +30,41 @@
 var margin_top_num_1 = 0;
 var margin_top_num_2 = 0;
 var margin_btm_num_1 = 0;
+var margin_btm_num_2 = 0;
 
 function gameStart() {
     starsMove();
     margin_btm_num_1 = -625;
+    margin_top_num_2 = -625;
 
     //make main screen items hidden
     $("#content").css("visibility", "hidden");
     $("#logo").css("visibility", "hidden");
+
+    //make game screen items visible
+
 }
 
 function starsMove() {
 
     margin_top_num_1++;
+    margin_top_num_2++;
     margin_btm_num_1--;
-    $("#stars").css("margin-top", margin_top_num_1 + "px");
+    margin_btm_num_2--;
     $("#stars").css("margin-bottom", margin_btm_num_1 + "px");
+    $("#stars").css("margin-top", margin_top_num_1 + "px");
+    $("#stars2").css("margin-bottom", margin_btm_num_2 + "px");
+    $("#stars2").css("margin-top", margin_top_num_2 + "px");
+
+    if (margin_btm_num_1 < -1250) {
+        margin_btm_num_1 = 0;
+        margin_top_num_1 = -625;
+    }
+
+    if (margin_btm_num_2 < -1250) {
+        margin_btm_num_2 = 0;
+        margin_top_num_2 = -625;
+    }
 
     setTimeout(starsMove, 5);
 }

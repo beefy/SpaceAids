@@ -22,10 +22,11 @@ div {
     text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
 
-.stars {
+#stars2 {
+    
     height: 100%;
     width: 100%;
-    margin-bottom: -170%;
+    margin-top:-625px;
     z-index: -1;
 }
 
@@ -35,22 +36,6 @@ div {
     width: 100%;
     margin-bottom: -625px;
     z-index: -1;
-}
-
-#stars1 {
-    height: 100%;
-    width: 100%;
-    margin-bottom: -170%;
-    z-index: -1;
-
-}
-
-#stars2 {
-    height: 100%;
-    width: 100%;
-    margin-bottom: -170%;
-    z-index: -1;
-
 }
 
 .white_background {

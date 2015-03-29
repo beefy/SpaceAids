@@ -33,9 +33,11 @@ var margin_btm_num_1 = 0;
 var margin_btm_num_2 = 0;
 var cursorX = 0;
 var cursorY = 0;
+var bullet_num = 0;
 
 function gameStart() {
     starsMove();
+    shoot();
     margin_btm_num_1 = -625;
     margin_top_num_2 = -625;
 
@@ -70,6 +72,29 @@ function starsMove() {
     }
 
     setTimeout(starsMove, 5);
+}
+
+function shoot() {
+
+    //create the bullet
+    var bullet = document.createElement("div");
+    var bullet_id = document.createAttribute("id");   
+    bullet_id.value = bullet_num.toString();   
+    bullet.setAttributeNode(bullet_id);
+    bullet_num++;
+
+    //fire the bullet
+    fire();
+
+    //automatic fire
+    setTimeout(shoot, 1000);
+}
+
+function fire() {
+
+    
+
+    setTimeout(, 10);
 }
 
 document.body.onmousedown = function(e) {

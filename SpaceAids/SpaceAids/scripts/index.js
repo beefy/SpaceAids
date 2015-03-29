@@ -42,6 +42,7 @@ function gameStart() {
     bullet_move();
     enemy();
     enemyMove();
+    enemy_bullet_collision();
     margin_btm_num_1 = -625;
     margin_top_num_2 = -625;
 
@@ -52,6 +53,35 @@ function gameStart() {
     //make game screen items visible
     $("#game_module").css("visibility", "visible");
 
+}
+
+function enemy_bullet_collision() {
+    
+    for(var enemy_num = 0; enemy_num < 5; enemy_num++) {
+        for (var bullet_num = 0; bullet_num < 5; bullet_num++) {
+
+            var bullet_top_left;
+            var bullet_top_right;
+            var bullet_bottom_left;
+            var bullet_bottom_right;
+            
+            var enemy_top_left;
+            var enemy_top_right;
+            var enemy_bottom_left;
+            var enemy_bottom_right;
+
+            if((enemy_top_left < bullet_top_right ||
+                enemy_top_right < bullet_top_left) &&
+
+                (enemy_bottom_left < bullet_top_left ||
+                enemy_top_left < bullet_bottom_left)) {
+
+                enemyReset(enemy_num);
+                fire(bullet_num);
+            }
+}
+        }
+    }
 }
 
 function enemy() {

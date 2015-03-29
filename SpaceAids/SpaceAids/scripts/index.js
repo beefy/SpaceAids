@@ -38,6 +38,7 @@ var bullet_num = 0;
 function gameStart() {
     starsMove();
     shoot();
+    bullet_move();
     margin_btm_num_1 = -625;
     margin_top_num_2 = -625;
 
@@ -71,30 +72,49 @@ function starsMove() {
         margin_top_num_2 = -625;
     }
 
-    setTimeout(starsMove, 5);
+    setInterval(starsMove, 1);
 }
 
 function shoot() {
 
-    //create the bullet
-    var bullet = document.createElement("div");
-    var bullet_id = document.createAttribute("id");   
-    bullet_id.value = bullet_num.toString();   
-    bullet.setAttributeNode(bullet_id);
-    bullet_num++;
+    ////create the bullet
+    //var bullet = document.createElement("div");
+    ////id
+    ////var bullet_id = document.createAttribute("id");   
+    ////bullet_id.value = bullet_num.toString;
+    ////bullet.setAttributeNode(bullet_id);
+    ////class
+    //var bullet_class = document.createAttribute("class"); 
+    //bullet_class.value = "bulletclass";
+    //bullet.setAttributeNode(bullet_class);
 
     //fire the bullet
-    fire();
+    fire(bullet_num);
+
+    bullet_num++;
 
     //automatic fire
     setTimeout(shoot, 1000);
 }
 
-function fire() {
+//move current bullets
+function bullet_move() {
 
-    
+    //var margin_num = $(bullet_num.toString).css("margin-top");
+    //$(bullet_num.toString).css("margin-top", margin_num - 1);
 
-    setTimeout(, 10);
+    for (var i = 0; i < 5; i++) {
+        var margin_top = parseInt($("#bullet_" + i).css("margin-top").replace("px", ""));
+        $("#bullet_" + i).css("margin-top", margin_top-10 + "px");
+    }
+
+    setTimeout(bullet_move, 10);
+}
+
+//reset a bullet
+function fire(number) {
+    var margin_left = parseInt($("#player").css("margin-left").replace("px", ""));
+    $("#bullet_" + number).css("margin-left", margin_left + "px");
 }
 
 document.body.onmousedown = function(e) {

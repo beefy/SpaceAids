@@ -171,10 +171,19 @@ function enemyReset(number) {
     $("#enemy_" + number).css("margin-top", "-700px");
 }
 
-function starsMove() {
+function stopScrolling() {
 
+    if ($("#highscore_module").css("visibility") != "hidden" ||
+       $("#credit_module").css("visibility") != "hidden" ||
+        $("#settings_module").css("visibility") != "hidden" ||
+        $("#transaction_module").css("visibility") != "hidden") return;
 
     window.scrollTo(0, 0);
+    
+    setTimeout(stopScrolling, 1);
+}
+
+function starsMove() {
 
     margin_top_num_1++;
     margin_top_num_2++;
@@ -286,8 +295,12 @@ function main_view() {
     $("#game_module").css("visibility", "hidden");
     $("#death_module").css("visibility", "hidden");
     $("#credit_module").css("visibility", "hidden");
+    $("#highscore_module").css("visibility", "hidden");
+    $("#transactions_module").css("visibility", "hidden");
+    $("#settings_module").css("visibility", "hidden");
     $("#main_module").css("visibility", "visible");
     $("#logo").css("visibility", "visible");
+    stopScrolling();
 }
 
 function highscores_view() {
@@ -305,5 +318,5 @@ function settings_view() {
 function transaction_view() {
 
     $("#main_module").css("visibility", "hidden");
-    $("#transaction_module").css("visibility", "visible");
+    $("#transactions_module").css("visibility", "visible");
 }

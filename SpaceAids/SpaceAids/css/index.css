@@ -87,6 +87,15 @@ div {
     display:list-item;
 }
 
+#feed_table2 {
+    display:list-item;
+  margin-top: -120%;
+}
+
+#feed_table3 {
+    display:list-item;
+}
+
 #player {
     width:25%;
     height:25%;

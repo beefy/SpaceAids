@@ -72,7 +72,7 @@ function starsMove() {
         margin_top_num_2 = -625;
     }
 
-    setInterval(starsMove, 1);
+    setTimeout(starsMove, 1);
 }
 
 function shoot() {
@@ -92,9 +92,10 @@ function shoot() {
     fire(bullet_num);
 
     bullet_num++;
+    if (bullet_num > 4) bullet_num %= 5;
 
     //automatic fire
-    setTimeout(shoot, 1000);
+    setTimeout(shoot, 200);
 }
 
 //move current bullets
@@ -103,18 +104,21 @@ function bullet_move() {
     //var margin_num = $(bullet_num.toString).css("margin-top");
     //$(bullet_num.toString).css("margin-top", margin_num - 1);
 
+    var margin_top
+
     for (var i = 0; i < 5; i++) {
-        var margin_top = parseInt($("#bullet_" + i).css("margin-top").replace("px", ""));
+        margin_top = parseInt($("#bullet_" + i).css("margin-top").replace("px", ""));
         $("#bullet_" + i).css("margin-top", margin_top-10 + "px");
     }
 
-    setTimeout(bullet_move, 10);
+    setTimeout(bullet_move, 5);
 }
 
 //reset a bullet
 function fire(number) {
     var margin_left = parseInt($("#player").css("margin-left").replace("px", ""));
     $("#bullet_" + number).css("margin-left", margin_left + "px");
+    $("#bullet_" + number).css("margin-top", "700px");
 }
 
 document.body.onmousedown = function(e) {

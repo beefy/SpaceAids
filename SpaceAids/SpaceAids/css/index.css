@@ -22,6 +22,10 @@ div {
     text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
 
+#death {
+    margin-top:-325%;
+}
+
 #stars2 {
     
     height: 100%;

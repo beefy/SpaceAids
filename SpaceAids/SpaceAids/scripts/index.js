@@ -34,11 +34,14 @@ var margin_btm_num_2 = 0;
 var cursorX = 0;
 var cursorY = 0;
 var bullet_num = 0;
+var enemy_num = 0;
 
 function gameStart() {
     starsMove();
     shoot();
     bullet_move();
+    enemy();
+    enemyMove();
     margin_btm_num_1 = -625;
     margin_top_num_2 = -625;
 
@@ -49,6 +52,34 @@ function gameStart() {
     //make game screen items visible
     $("#game_module").css("visibility", "visible");
 
+}
+
+function enemy() {
+    enemyReset(enemy_num);
+
+    enemy_num++;
+    if (enemy_num > 4) enemy_num %= 5;
+
+    //regenerate when hit the user
+    setTimeout(enemy, 2000);
+}
+
+function enemyMove() {
+
+    var margin_top
+
+    for (var i = 0; i < 5; i++) {
+        margin_top = parseInt($("#enemy_" + i).css("margin-top").replace("px", ""));
+        $("#enemy_" + i).css("margin-top", margin_top + 2 + "px");
+    }
+
+    setTimeout(enemyMove, 1);
+}
+
+function enemyReset(number) {
+    var margin_left = Math.random()*500;
+    $("#enemy_" + number).css("margin-left", margin_left + 30 + "px");
+    $("#enemy_" + number).css("margin-top", "-700px");
 }
 
 function starsMove() {

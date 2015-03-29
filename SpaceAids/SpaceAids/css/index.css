@@ -10,6 +10,10 @@ div {
     color:white;
 }
 
+#credit_module {
+    margin-top: 40%;
+}
+
 .logo {
     font-family: Perpetua, Baskerville, "Big Caslon", "Palatino Linotype", Palatino, "URW Palladio L", "Nimbus Roman No9 L", serif;
     color: #FFFFFF;

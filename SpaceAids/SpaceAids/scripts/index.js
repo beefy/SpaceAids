@@ -272,3 +272,8 @@ function death() {
     $("#death_module").css("visibility", "visible");
 
 }
+
+function main_view() {
+    $("#credit_module").css("visibility", "hidden");
+    $("#main_module").css("visibility", "visible");
+}

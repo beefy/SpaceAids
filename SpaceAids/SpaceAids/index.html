@@ -28,7 +28,7 @@
     <!--
         MAIN MENU MODULE
     -->
-    <div id="main_module" class="feed">
+    <div id="main_module" class="feed" style="visibility:hidden">
         <div id="feed_table">
             <!--<img src="images/white_circle.png" class="white_background" />-->
             <div class="feed_table_row" onclick="gameStart();">
@@ -112,6 +112,136 @@
         -->
     <div id="death_module" style="visibility:hidden">
         <p id="death" class="logo">YOU DIED AT THE HANDS OF ALIEN SCUM</p>
+    </div>
+
+    <!--
+        ENTER CREDIT CARD MODULE
+        -->
+    <!--<div id="credit_module">
+        <p>Card #</p>
+        <p>Card Type</p>
+        <p>Card Exp Month</p>
+        <p>Card Exp Year</p>
+        <p>Bill Address</p>
+        <p>Bill City</p>
+        <p>Bill State</p>
+        <p>Bill Zip</p>
+    </div>-->
+
+    <div id="credit_module" class="feed" >
+        <div id="feed_table">
+            <!--<img src="images/white_circle.png" class="white_background" />-->
+            <div class="feed_table_row">
+
+                <div class="feed_table_cell">
+                </div>
+                <div class="feed_table_cell">
+                    <label>BY USING THIS APP, YOU AGREE TO DONATE $0.05 TO 'AID FOR AIDS INTERNATIONAL' FOR EVERY IN-GAME DEATH</label>
+                </div>
+                
+                <div class="feed_table_cell">
+                </div>
+            </div>
+
+            <div class="feed_table_row">
+
+                <div class="feed_table_cell">
+                    <label>CARD #</label>
+                </div>
+                <div class="feed_table_cell">
+                    <input type="text" name="cardnum">
+                </div>
+                <div class="feed_table_cell">
+                </div>
+            </div>
+
+            <div class="feed_table_row">
+                <div class="feed_table_cell">
+                    <label>CARD TYPE</label>
+                </div>
+                <div class="feed_table_cell">
+                    <input type="text" name="cardtype">
+                </div>
+                <div class="feed_table_cell">
+                </div>
+            </div>
+
+            <div class="feed_table_row">
+                <div class="feed_table_cell">
+                    <label>CARD EXP MONTH</label>
+                </div>
+                <div class="feed_table_cell">
+                    <input type="text" name="expmonth">
+                </div>
+                <div class="feed_table_cell">
+                </div>
+            </div>
+
+            <div class="feed_table_row">
+                <div class="feed_table_cell">
+                    <label>CARD EXP YEAR</label>
+                </div>
+                <div class="feed_table_cell">
+                    <input type="text" name="expyear">
+                </div>
+                <div class="feed_table_cell">
+                </div>
+            </div>
+            <div class="feed_table_row">
+
+                <div class="feed_table_cell">
+                    <label>BILL ADDRESS</label>
+                </div>
+                <div class="feed_table_cell">
+                    <input type="text" name="billaddress">
+                </div>
+                <div class="feed_table_cell">
+                </div>
+            </div>
+
+            <div class="feed_table_row">
+                <div class="feed_table_cell">
+                    <label>BILL CITY</label>
+                </div>
+                <div class="feed_table_cell">
+                    <input type="text" name="billcity">
+                </div>
+                <div class="feed_table_cell">
+                </div>
+            </div>
+
+            <div class="feed_table_row">
+                <div class="feed_table_cell">
+                    <label>BILL STATE</label>
+                </div>
+                <div class="feed_table_cell">
+                    <input type="text" name="billstate">
+                </div>
+                <div class="feed_table_cell">
+                </div>
+            </div>
+
+            <div class="feed_table_row">
+                <div class="feed_table_cell">
+                    <label>BILL ZIP</label>
+                </div>
+                <div class="feed_table_cell">
+                    <input type="text" name="billzip">
+                </div>
+                <div class="feed_table_cell">
+                </div>
+            </div>
+
+            <div class="feed_table_row">
+                <div class="feed_table_cell">
+                </div>
+                <div class="feed_table_cell" onclick="main_view()">
+                    <label>APPLY CHANGES</label>
+                </div>
+                <div class="feed_table_cell">
+                </div>
+            </div>
+        </div>
     </div>
 
 </body>

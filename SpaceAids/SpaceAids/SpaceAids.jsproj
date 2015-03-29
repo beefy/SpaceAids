@@ -111,6 +111,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Content Include="images\alien.png" />
+    <Content Include="images\explode.gif~c200" />
     <Content Include="images\missile.png" />
     <Content Include="images\pentagon.png" />
     <Content Include="images\spaceship.png" />

@@ -263,6 +263,9 @@ document.body.onmousedown = function (e) {
 function death() {
     isDead = true;
 
+    //blow up ship
+    $("#player")[0].setAttribute("src", "images/explode.gif~c200");
+
     //display game over
     $("#death_module").css("visibility", "visible");
     $("#death_module").css("position", "absolute");

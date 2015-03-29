@@ -11,7 +11,7 @@ div {
 }
 
 #credit_module {
-    margin-top: 40%;
+    margin-top: 70%;
 }
 
 .logo {
@@ -63,13 +63,11 @@ div {
 
 .feed {
     width:100%;
-    height:80%;
+    height:70%;
     overflow:auto;
 }
 
 .feed_table_cell {
-    border:solid;
-    border-color:#5A8CE8;
     border-right:hidden;
     border-left:hidden;
     width:7%;
@@ -114,5 +112,4 @@ div {
     width:70px;
     height:70px;
     position:absolute;
-    visibility:visible;
 }

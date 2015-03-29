@@ -251,7 +251,7 @@ function fire(number) {
 document.body.onmousedown = function (e) {
 
     if (isDead) {
-        //window.location.replace('index.html');
+        main_view();
         return;
     }
 
@@ -273,10 +273,15 @@ function death() {
 
     //display game over
     $("#death_module").css("visibility", "visible");
-
+    $("#death_module").css("position", "absolute");
+    //$("#death").css("position", "absolute");
+    //$("#death").css("margin-top", "-180%");
 }
 
 function main_view() {
+    $("#game_module").css("visibility", "hidden");
+    $("#death_module").css("visibility", "hidden");
     $("#credit_module").css("visibility", "hidden");
     $("#main_module").css("visibility", "visible");
+    $("#logo").css("visibility", "visible");
 }

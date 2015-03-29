@@ -100,3 +100,11 @@ div {
     background-color:blue;
     position:absolute;
 }
+
+.enemy {
+
+    width:70px;
+    height:70px;
+    position:absolute;
+    visibility:visible;
+}

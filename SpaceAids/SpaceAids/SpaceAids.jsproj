@@ -111,7 +111,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Content Include="highscores.html" />
+    <Content Include="images\pentagon.png" />
+    <Content Include="images\square.png" />
     <Content Include="images\stars.jpg" />
+    <Content Include="images\triangle.png" />
     <Content Include="images\white_circle.png" />
     <Content Include="merges\android\scripts\android2.3-jscompat.js" />
     <Content Include="merges\android\scripts\platformOverrides.js" />

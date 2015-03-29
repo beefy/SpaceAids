@@ -236,8 +236,8 @@ function bullet_move() {
 //reset a bullet
 function fire(number) {
     var margin_left = parseInt($("#player").css("margin-left").replace("px", ""));
-    $("#bullet_" + number).css("margin-left", margin_left+30 + "px");
-    $("#bullet_" + number).css("margin-top", "-150px");
+    $("#bullet_" + number).css("margin-left", margin_left+5 + "px");
+    $("#bullet_" + number).css("margin-top", "-200px");
 }
 
 document.body.onmousedown = function (e) {

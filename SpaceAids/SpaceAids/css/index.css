@@ -15,7 +15,7 @@ input {
 }
 
 #credit_module {
-  margin-top: -40%;
+  margin-top: -30%;
 }
 
 .logo {
@@ -116,7 +116,6 @@ input {
     width:15px; /*29px*/
     height:20px; /*45px*/
     position:absolute;
-    background-color:blue;
     /*background-image: url(../images/missile.png);*/
     
 }

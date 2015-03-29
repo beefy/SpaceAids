@@ -72,16 +72,6 @@ function enemy_bullet_collision() {
             var bullet_top = $("#bullet_" + bullet_num).offset().top;
             //var bullet_bottom = $("#bullet_" + bullet_num).offset().top + 2;
 
-            //if ((enemy_left < bullet_right ||
-            //    enemy_right < bullet_left) &&
-
-            //    (enemy_bottom < bullet_top ||
-            //    enemy_top < bullet_bottom)) {
-
-            //    enemyReset(enemy_num);
-            //    fire(bullet_num);
-            //}
-
             var rect1 = { x: enemy_left, y: enemy_top, width: 70, height: 70 }
             var rect2 = { x: bullet_left, y: bullet_top, width: 20, height: 50 }
 
@@ -117,16 +107,6 @@ function enemy_player_collision() {
         var player_top = $("#player").offset().top;
         //var player_bottom = $("#player").offset().bottom+50;
 
-        //var enemy_left = parseInt($("#enemy_" + enemy_num).css("margin-left").replace("px", ""));
-        //var enemy_right = parseInt($("#enemy_" + enemy_num).css("margin-left").replace("px", "")) + 35;
-        //var enemy_top = parseInt($("#enemy_" + enemy_num).css("margin-top").replace("px", ""));
-        //var enemy_bottom = parseInt($("#enemy_" + enemy_num).css("margin-top").replace("px", "")) - 35;
-
-        //var player_left = parseInt($("#player").css("margin-left").replace("px", ""));
-        //var player_right = parseInt($("#player").css("margin-left").replace("px", "")) + 10;
-        //var player_top = parseInt($("#player").css("margin-top").replace("px", ""));
-        //var player_bottom = parseInt($("#player").css("margin-top").replace("px", "")) - 25;
-
         var rect1 = { x: enemy_left, y: enemy_top, width: 70, height: 70 }
         var rect2 = { x: player_left, y: player_top, width: 100, height: 100 }
 
@@ -138,16 +118,6 @@ function enemy_player_collision() {
             window.alert("Thank you for your donation of: $0.05");
             death();
         }
-
-            //if ((enemy_left < player_left ||
-            //    enemy_right > player_right) &&
-
-            //    (enemy_bottom < player_bottom ||
-            //    enemy_top > player_top)) {
-
-            //    window.alert("Thank you for your donation of: $0.05");
-            //    death();
-            //}
     }
 
     setTimeout(enemy_player_collision, 2);

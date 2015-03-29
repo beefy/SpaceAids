@@ -117,7 +117,7 @@ function bullet_move() {
 //reset a bullet
 function fire(number) {
     var margin_left = parseInt($("#player").css("margin-left").replace("px", ""));
-    $("#bullet_" + number).css("margin-left", margin_left + "px");
+    $("#bullet_" + number).css("margin-left", margin_left+30 + "px");
     $("#bullet_" + number).css("margin-top", "-150px");
 }
 

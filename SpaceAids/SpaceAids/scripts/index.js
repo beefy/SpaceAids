@@ -31,6 +31,8 @@ var margin_top_num_1 = 0;
 var margin_top_num_2 = 0;
 var margin_btm_num_1 = 0;
 var margin_btm_num_2 = 0;
+var cursorX = 0;
+var cursorY = 0;
 
 function gameStart() {
     starsMove();
@@ -68,4 +70,19 @@ function starsMove() {
     }
 
     setTimeout(starsMove, 5);
+}
+
+document.body.onmousedown = function(e) {
+
+    if ($("#game_module").css("visibility") != "visible") return;
+
+    var margin_num = parseInt($("#player").css("margin-left").replace("px", ""));
+
+    if (e.clientX < document.body.clientWidth / 2) {
+        //left side click
+        $("#player").css("margin-left", margin_num-10 + "px");
+    } else {
+        //right side click
+        $("#player").css("margin-left", margin_num+10 + "px");
+    }
 }

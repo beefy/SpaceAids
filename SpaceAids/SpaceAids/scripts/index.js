@@ -108,7 +108,7 @@ function enemy_player_collision() {
         //var player_bottom = $("#player").offset().bottom+50;
 
         var rect1 = { x: enemy_left, y: enemy_top, width: 70, height: 70 }
-        var rect2 = { x: player_left, y: player_top, width: 82, height: 126 }
+        var rect2 = { x: player_left, y: player_top, width: 62, height: 106 }
 
         if (rect1.x < rect2.x + rect2.width &&
            rect1.x + rect1.width > rect2.x &&

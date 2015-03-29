@@ -73,7 +73,7 @@ function enemy_bullet_collision() {
             //var bullet_bottom = $("#bullet_" + bullet_num).offset().top + 2;
 
             var rect1 = { x: enemy_left, y: enemy_top, width: 70, height: 70 }
-            var rect2 = { x: bullet_left, y: bullet_top, width: 20, height: 50 }
+            var rect2 = { x: bullet_left, y: bullet_top, width: 15, height: 20 }
 
             if (rect1.x < rect2.x + rect2.width &&
                rect1.x + rect1.width > rect2.x &&
@@ -108,7 +108,7 @@ function enemy_player_collision() {
         //var player_bottom = $("#player").offset().bottom+50;
 
         var rect1 = { x: enemy_left, y: enemy_top, width: 70, height: 70 }
-        var rect2 = { x: player_left, y: player_top, width: 100, height: 100 }
+        var rect2 = { x: player_left, y: player_top, width: 82, height: 126 }
 
         if (rect1.x < rect2.x + rect2.width &&
            rect1.x + rect1.width > rect2.x &&

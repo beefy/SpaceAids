@@ -15,7 +15,7 @@ input {
 }
 
 #credit_module {
-  margin-top: -2%;
+  margin-top: -40%;
 }
 
 .logo {
@@ -101,23 +101,24 @@ input {
 }
 
 #player {
-    width:25%;
-    height:25%;
+    width:82px;
+    height:126px;
   margin-left: 130px;
 }
 
 #game_module {
     
-    margin-top:-60%;
+    margin-top:-40%;
 }
 
 .bullet {
 
-    width:20px;
-    height:50px;
-    background:blue;
-    background-color:blue;
+    width:15px; /*29px*/
+    height:20px; /*45px*/
     position:absolute;
+    background-color:blue;
+    /*background-image: url(../images/missile.png);*/
+    
 }
 
 .enemy {

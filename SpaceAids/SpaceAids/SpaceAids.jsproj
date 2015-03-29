@@ -110,7 +110,9 @@
     <VisualStudioVersion>12.0</VisualStudioVersion>
   </PropertyGroup>
   <ItemGroup>
+    <Content Include="images\missile.png" />
     <Content Include="images\pentagon.png" />
+    <Content Include="images\spaceship.png" />
     <Content Include="images\square.png" />
     <Content Include="images\stars.jpg" />
     <Content Include="images\triangle.png" />

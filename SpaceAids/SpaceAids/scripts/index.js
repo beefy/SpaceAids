@@ -278,10 +278,32 @@ function death() {
     //$("#death").css("margin-top", "-180%");
 }
 
+
+/*
+    NAVIGATION
+*/
 function main_view() {
     $("#game_module").css("visibility", "hidden");
     $("#death_module").css("visibility", "hidden");
     $("#credit_module").css("visibility", "hidden");
     $("#main_module").css("visibility", "visible");
     $("#logo").css("visibility", "visible");
+}
+
+function highscores_view() {
+
+    $("#main_module").css("visibility", "hidden");
+    $("#highscore_module").css("visibility", "visible");
+}
+
+function settings_view() {
+
+    $("#main_module").css("visibility", "hidden");
+    $("#settings_module").css("visibility", "visible");
+}
+
+function transaction_view() {
+
+    $("#main_module").css("visibility", "hidden");
+    $("#transaction_module").css("visibility", "visible");
 }

@@ -39,19 +39,19 @@
             </div>
 
             <div class="feed_table_row">
-                <div class="feed_table_cell" onclick="window.location.replace('highscores.html')">
+                <div class="feed_table_cell" onclick="highscores_view()">
                     <label>HIGHSCORES</label>
                 </div>
             </div>
 
             <div class="feed_table_row">
-                <div class="feed_table_cell" onclick="window.location.replace('settings.html')">
+                <div class="feed_table_cell" onclick="settings_view()">
                     <label>SETTINGS</label>
                 </div>
             </div>
 
             <div class="feed_table_row">
-                <div class="feed_table_cell" onclick="window.location.replace('transactions.html')">
+                <div class="feed_table_cell" onclick="transaction_view()">
                     <label>TRANSACTIONS</label>
                 </div>
             </div>
@@ -242,6 +242,43 @@
                 </div>
             </div>
         </div>
+    </div>
+
+    <!--
+        
+        HIGH SCORE MODULE
+    -->
+    <div id="highscore_module" style="visibility:hidden; height:0px;">
+        <div>Highscores</div>
+        <br />
+        <br />
+        <footer onclick="main_view()">
+            <div>Back</div>
+        </footer>
+    </div>
+
+    <!--
+        SETTINGS MODULE
+    -->
+    <div id="settings_module" style="visibility:hidden; height:0px;">
+        <div>Settings</div>
+        <br />
+        <br />
+        <footer onclick="main_view()">
+            <div>Back</div>
+        </footer>
+    </div>
+
+    <!--
+        TRANSACTIONS MODULE
+        -->
+    <div id="transactions_module" style="visibility:hidden; height:0px;">
+        <div>Transactions</div>
+        <br />
+        <br />
+        <footer onclick="main_view()">
+            <div>Back</div>
+        </footer>
     </div>
 
 </body>

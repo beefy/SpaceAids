@@ -346,3 +346,9 @@ function transaction_view() {
     $("#main_module").css("visibility", "hidden");
     $("#transactions_module").css("visibility", "visible");
 }
+
+function credit_view() {
+
+    $("#credit_module").css("visibility", "visible");
+    $("#settings_module").css("visibility", "hidden");
+}

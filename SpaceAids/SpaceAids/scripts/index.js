@@ -63,20 +63,32 @@ function enemy_bullet_collision() {
         for (var bullet_num = 0; bullet_num < 5; bullet_num++) {
 
             var enemy_left = $("#enemy_" + enemy_num).offset().left;
-            var enemy_right = $("#enemy_" + enemy_num).offset().left + 5;
+            //var enemy_right = $("#enemy_" + enemy_num).offset().left + 5;
             var enemy_top = $("#enemy_" + enemy_num).offset().top;
-            var enemy_bottom = $("#enemy_" + enemy_num).offset().top + 5;
+            //var enemy_bottom = $("#enemy_" + enemy_num).offset().top + 5;
 
             var bullet_left = $("#bullet_" + bullet_num).offset().left;
-            var bullet_right = $("#bullet_" + bullet_num).offset().left + 2;
+            //var bullet_right = $("#bullet_" + bullet_num).offset().left + 2;
             var bullet_top = $("#bullet_" + bullet_num).offset().top;
-            var bullet_bottom = $("#bullet_" + bullet_num).offset().top + 2;
+            //var bullet_bottom = $("#bullet_" + bullet_num).offset().top + 2;
 
-            if ((enemy_left < bullet_right ||
-                enemy_right < bullet_left) &&
+            //if ((enemy_left < bullet_right ||
+            //    enemy_right < bullet_left) &&
 
-                (enemy_bottom < bullet_top ||
-                enemy_top < bullet_bottom)) {
+            //    (enemy_bottom < bullet_top ||
+            //    enemy_top < bullet_bottom)) {
+
+            //    enemyReset(enemy_num);
+            //    fire(bullet_num);
+            //}
+
+            var rect1 = { x: enemy_left, y: enemy_top, width: 70, height: 70 }
+            var rect2 = { x: bullet_left, y: bullet_top, width: 20, height: 50 }
+
+            if (rect1.x < rect2.x + rect2.width &&
+               rect1.x + rect1.width > rect2.x &&
+               rect1.y < rect2.y + rect2.height &&
+               rect1.height + rect1.y > rect2.y) {
 
                 enemyReset(enemy_num);
                 fire(bullet_num);
@@ -95,15 +107,15 @@ function enemy_player_collision() {
     for (var enemy_num = 0; enemy_num < 5; enemy_num++) {
 
 
-        var enemy_left = $("#enemy_" + enemy_num).offset().left-25;
-        var enemy_right = $("#enemy_" + enemy_num).offset().right+50;
-        var enemy_top = $("#enemy_" + enemy_num).offset().top-25;
-        var enemy_bottom = $("#enemy_" + enemy_num).offset().bottom+50;
+        var enemy_left = $("#enemy_" + enemy_num).offset().left;
+        //var enemy_right = $("#enemy_" + enemy_num).offset().right+50;
+        var enemy_top = $("#enemy_" + enemy_num).offset().top;
+        //var enemy_bottom = $("#enemy_" + enemy_num).offset().bottom+50;
 
-        var player_left = $("#player").offset().left-25;
-        var player_right = $("#player").offset().right+50;
-        var player_top = $("#player").offset().top-25;
-        var player_bottom = $("#player").offset().bottom+50;
+        var player_left = $("#player").offset().left;
+        //var player_right = $("#player").offset().right+50;
+        var player_top = $("#player").offset().top;
+        //var player_bottom = $("#player").offset().bottom+50;
 
         //var enemy_left = parseInt($("#enemy_" + enemy_num).css("margin-left").replace("px", ""));
         //var enemy_right = parseInt($("#enemy_" + enemy_num).css("margin-left").replace("px", "")) + 35;
@@ -115,26 +127,27 @@ function enemy_player_collision() {
         //var player_top = parseInt($("#player").css("margin-top").replace("px", ""));
         //var player_bottom = parseInt($("#player").css("margin-top").replace("px", "")) - 25;
 
-        //var rect1 = { x: enemy_left, y: enemy_top, width: 50, height: 50 }
-        //var rect2 = { x: player_left, y: player_top, width: 50, height: 50 }
+        var rect1 = { x: enemy_left, y: enemy_top, width: 70, height: 70 }
+        var rect2 = { x: player_left, y: player_top, width: 100, height: 100 }
 
-        //if (rect1.x < rect2.x + rect2.width &&
-        //   rect1.x + rect1.width > rect2.x &&
-        //   rect1.y < rect2.y + rect2.height &&
-        //   rect1.height + rect1.y > rect2.y) {
-            
-        //    death();
-        //}
+        if (rect1.x < rect2.x + rect2.width &&
+           rect1.x + rect1.width > rect2.x &&
+           rect1.y < rect2.y + rect2.height &&
+           rect1.height + rect1.y > rect2.y) {
 
-            if ((enemy_left < player_left ||
-                enemy_right > player_right) &&
+            window.alert("Thank you for your donation of: $0.05");
+            death();
+        }
 
-                (enemy_bottom < player_bottom ||
-                enemy_top > player_top)) {
+            //if ((enemy_left < player_left ||
+            //    enemy_right > player_right) &&
 
-                window.alert("Thank you for your donation of: $0.05");
-                death();
-            }
+            //    (enemy_bottom < player_bottom ||
+            //    enemy_top > player_top)) {
+
+            //    window.alert("Thank you for your donation of: $0.05");
+            //    death();
+            //}
     }
 
     setTimeout(enemy_player_collision, 2);

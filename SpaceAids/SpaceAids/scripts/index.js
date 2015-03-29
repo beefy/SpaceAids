@@ -95,7 +95,7 @@ function shoot() {
     if (bullet_num > 4) bullet_num %= 5;
 
     //automatic fire
-    setTimeout(shoot, 200);
+    setTimeout(shoot, 500);
 }
 
 //move current bullets
@@ -108,17 +108,17 @@ function bullet_move() {
 
     for (var i = 0; i < 5; i++) {
         margin_top = parseInt($("#bullet_" + i).css("margin-top").replace("px", ""));
-        $("#bullet_" + i).css("margin-top", margin_top-10 + "px");
+        $("#bullet_" + i).css("margin-top", margin_top-5 + "px");
     }
 
-    setTimeout(bullet_move, 5);
+    setTimeout(bullet_move, 1);
 }
 
 //reset a bullet
 function fire(number) {
     var margin_left = parseInt($("#player").css("margin-left").replace("px", ""));
     $("#bullet_" + number).css("margin-left", margin_left + "px");
-    $("#bullet_" + number).css("margin-top", "700px");
+    $("#bullet_" + number).css("margin-top", "-150px");
 }
 
 document.body.onmousedown = function(e) {

@@ -35,6 +35,7 @@ var cursorX = 0;
 var cursorY = 0;
 var bullet_num = 0;
 var enemy_num = 0;
+var isDead = false;
 
 function gameStart() {
     starsMove();
@@ -60,27 +61,17 @@ function enemy_bullet_collision() {
     for(var enemy_num = 0; enemy_num < 5; enemy_num++) {
         for (var bullet_num = 0; bullet_num < 5; bullet_num++) {
 
-            //var bullet_top_left = parseInt($("#enemy_" + enemy_num).css("margin-left").replace("px", ""));;
-            //var bullet_top_right;
-            //var bullet_bottom_left;
-            //var bullet_bottom_right;
-            
-            //var enemy_top_left;
-            //var enemy_top_right;
-            //var enemy_bottom_left;
-            //var enemy_bottom_right;
+            var enemy_left = $("#enemy_" + enemy_num).offset().left;
+            var enemy_right = $("#enemy_" + enemy_num).offset().left + 10;
+            var enemy_top = $("#enemy_" + enemy_num).offset().top;
+            var enemy_bottom = $("#enemy_" + enemy_num).offset().top - 10;
 
-            var enemy_left = parseInt($("#enemy_" + enemy_num).css("margin-left").replace("px", ""));
-            var enemy_right = parseInt($("#enemy_" + enemy_num).css("margin-left").replace("px", ""))+35;
-            var enemy_top = parseInt($("#enemy_" + enemy_num).css("margin-top").replace("px", ""));
-            var enemy_bottom = parseInt($("#enemy_" + enemy_num).css("margin-top").replace("px", ""))-35;
+            var bullet_left = $("#bullet_" + bullet_num).offset().left;
+            var bullet_right = $("#bullet_" + bullet_num).offset().left + 5;
+            var bullet_top = $("#bullet_" + bullet_num).offset().top;
+            var bullet_bottom = $("#bullet_" + bullet_num).offset().top - 5;
 
-            var bullet_left = parseInt($("#bullet_" + bullet_num).css("margin-left").replace("px", ""));
-            var bullet_right = parseInt($("#bullet_" + bullet_num).css("margin-left").replace("px", ""))+10;
-            var bullet_top = parseInt($("#bullet_" + bullet_num).css("margin-top").replace("px", ""));
-            var bullet_bottom = parseInt($("#bullet_" + bullet_num).css("margin-top").replace("px", ""))-25;
-
-            if((enemy_left < bullet_right ||
+            if ((enemy_left < bullet_right ||
                 enemy_right < bullet_left) &&
 
                 (enemy_bottom < bullet_top ||
@@ -96,7 +87,37 @@ function enemy_bullet_collision() {
     setTimeout(enemy_bullet_collision, 2);
 }
 
+function enemy_player_collision() {
+
+    for (var enemy_num = 0; enemy_num < 5; enemy_num++) {
+
+            var enemy_left = parseInt($("#enemy_" + enemy_num).css("margin-left").replace("px", ""));
+            var enemy_right = parseInt($("#enemy_" + enemy_num).css("margin-left").replace("px", "")) - 35;
+            var enemy_top = parseInt($("#enemy_" + enemy_num).css("margin-top").replace("px", ""));
+            var enemy_bottom = parseInt($("#enemy_" + enemy_num).css("margin-top").replace("px", "")) - 35;
+
+            var player_left = parseInt($("#player").css("margin-left").replace("px", ""));
+            var player_right = parseInt($("#player").css("margin-left").replace("px", "")) - 50;
+            var player_top = parseInt($("#player").css("margin-top").replace("px", ""));
+            var player_bottom = parseInt($("#player").css("margin-top").replace("px", "")) - 50;
+
+            if ((enemy_left < player_right &&
+                enemy_right > player_left) &&
+
+                (enemy_bottom < player_top &&
+                enemy_top > player_bottom)) {
+
+                death();
+            }
+    }
+
+
+    setTimeout(enemy_player_collision, 2);
+}
+
 function enemy() {
+    if (isDead) return;
+
     enemyReset(enemy_num);
 
     enemy_num++;
@@ -107,6 +128,7 @@ function enemy() {
 }
 
 function enemyMove() {
+    if (isDead) return;
 
     var margin_top
 
@@ -119,7 +141,7 @@ function enemyMove() {
 }
 
 function enemyReset(number) {
-    var margin_left = Math.random()*500;
+    var margin_left = Math.random()*350;
     $("#enemy_" + number).css("margin-left", margin_left + 30 + "px");
     $("#enemy_" + number).css("margin-top", "-700px");
 }
@@ -150,6 +172,8 @@ function starsMove() {
 
 function shoot() {
 
+    if (isDead) return;
+
     ////create the bullet
     //var bullet = document.createElement("div");
     ////id
@@ -174,6 +198,8 @@ function shoot() {
 //move current bullets
 function bullet_move() {
 
+    if (isDead) return;
+
     //var margin_num = $(bullet_num.toString).css("margin-top");
     //$(bullet_num.toString).css("margin-top", margin_num - 1);
 
@@ -194,7 +220,12 @@ function fire(number) {
     $("#bullet_" + number).css("margin-top", "-150px");
 }
 
-document.body.onmousedown = function(e) {
+document.body.onmousedown = function (e) {
+
+    if (isDead) {
+        window.location.replace('index.html');
+        return;
+    }
 
     if ($("#game_module").css("visibility") != "visible") return;
 
@@ -207,4 +238,12 @@ document.body.onmousedown = function(e) {
         //right side click
         $("#player").css("margin-left", margin_num+10 + "px");
     }
+}
+
+function death() {
+    isDead = true;
+
+    //display game over
+    $("#death_module").css("visibility", "visible");
+
 }

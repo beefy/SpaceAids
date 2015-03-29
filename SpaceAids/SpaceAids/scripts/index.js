@@ -60,28 +60,40 @@ function enemy_bullet_collision() {
     for(var enemy_num = 0; enemy_num < 5; enemy_num++) {
         for (var bullet_num = 0; bullet_num < 5; bullet_num++) {
 
-            var bullet_top_left;
-            var bullet_top_right;
-            var bullet_bottom_left;
-            var bullet_bottom_right;
+            //var bullet_top_left = parseInt($("#enemy_" + enemy_num).css("margin-left").replace("px", ""));;
+            //var bullet_top_right;
+            //var bullet_bottom_left;
+            //var bullet_bottom_right;
             
-            var enemy_top_left;
-            var enemy_top_right;
-            var enemy_bottom_left;
-            var enemy_bottom_right;
+            //var enemy_top_left;
+            //var enemy_top_right;
+            //var enemy_bottom_left;
+            //var enemy_bottom_right;
 
-            if((enemy_top_left < bullet_top_right ||
-                enemy_top_right < bullet_top_left) &&
+            var enemy_left = parseInt($("#enemy_" + enemy_num).css("margin-left").replace("px", ""));
+            var enemy_right = parseInt($("#enemy_" + enemy_num).css("margin-left").replace("px", ""))+35;
+            var enemy_top = parseInt($("#enemy_" + enemy_num).css("margin-top").replace("px", ""));
+            var enemy_bottom = parseInt($("#enemy_" + enemy_num).css("margin-top").replace("px", ""))-35;
 
-                (enemy_bottom_left < bullet_top_left ||
-                enemy_top_left < bullet_bottom_left)) {
+            var bullet_left = parseInt($("#bullet_" + bullet_num).css("margin-left").replace("px", ""));
+            var bullet_right = parseInt($("#bullet_" + bullet_num).css("margin-left").replace("px", ""))+10;
+            var bullet_top = parseInt($("#bullet_" + bullet_num).css("margin-top").replace("px", ""));
+            var bullet_bottom = parseInt($("#bullet_" + bullet_num).css("margin-top").replace("px", ""))-25;
+
+            if((enemy_left < bullet_right ||
+                enemy_right < bullet_left) &&
+
+                (enemy_bottom < bullet_top ||
+                enemy_top < bullet_bottom)) {
 
                 enemyReset(enemy_num);
                 fire(bullet_num);
             }
-}
         }
     }
+
+
+    setTimeout(enemy_bullet_collision, 2);
 }
 
 function enemy() {

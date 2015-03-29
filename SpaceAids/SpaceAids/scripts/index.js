@@ -285,8 +285,48 @@ function death() {
     $("#death_module").css("position", "absolute");
     //$("#death").css("position", "absolute");
     //$("#death").css("margin-top", "-180%");
+    donate();
 }
 
+function donate() {
+    var api_string = "https://api.firstgiving.com/donation/creditcard";
+    /*
+ccNumber – Required. User’s credit card number.
+ccType – User’s credit card type. * “VI” ‐ Visa * “MC” ‐ MasterCard * “DI” ‐ Discover Card * “AX” – American Express
+ccExpDateYear – Required. The 4 digit year the card expires.
+ccExpDateMonth – Required. The 2 digit month the card expires.
+ccCardValidationNum – Required. Card security number. Valid values include the following: * “CVV2″ ‐ Visa. (three‐digit value) * “CVC2″ ‐ MasterCard. (three‐digit value) * “CID” ‐ American Express. (four‐digit value)
+billToTitle – The donor’s “title”, such as “Mr.”, “Mrs.”, “Dr.” etc. (Max length: 10)
+billToFirstName – Required. The customer’s first name. (Max length 100).
+billToMiddleName – The customer’s middle name. (Max length 100).
+billToLastName – Required. The customer’s last name. (Max length 100).
+billToAddressLine1 – Required. Address line 1 for customer bill to address. (Max length: 255)
+billToAddressLine2 – Address line 2 for customer bill to address. (Max length: 255)
+billToAddressLine3 – Address line 3 for customer bill to address. (Max length: 255)
+billToCity – Required. City value for customer bill to address. (Max length: 35)
+billToState – Required when billToCountry is US. State name for customer bill to address. In the US, the two character state code should be used. E.g., “FL”, “NY”, etc instead of “Florida” or “New York”. The full list of valid US state codes can be found here (Max length 30)
+billToZip – Required. Zip for customer bill to address. (Max length 20)
+billToCountry – Required. Two character Country code for customer bill to address. The country names corresponding to the abbreviations can be found in the ISO 3166-1 standard. Example: “US”. The full list of countries accepted by the donations API can be found here. (Max length: 3)
+billToEmail – Required. Email address that corresponds to the customer bill to address. (Max length: 100)
+billToPhone – Phone number that corresponds to the customer bill to address. (Max length: 20)
+remoteAddr – Required. The end user’s IP address. This optional parameter is used to block common sources of fraud.
+amount – Required. The amount of currency units to be donated. This should be in decimal format. Example: “1.23″ (without quotes). The minimum value is “5.00″.
+currencyCode – The currency code for the currency that describes the number of units to withdraw from the donor’s account. * “USD”
+
+charityId – Required. A UUID identifier provided by FirstGiving which identifies the recipient of the donation.
+
+eventId – An identifier provided by FirstGiving which identifies the event associated with the donation. If donation does not relate to an event id, pass “” (zero length string).
+fundraiserId – A universally unique ID which identifies the user account that was responsible for the donation that was collected. This is almost always a different person than the donor.
+orderId – A universally unique ID genereated by the 3rd party which identifies the donation in their system.
+description – Required. A short textual description of the donation.
+reportDonationToTaxAuthority – Boolean (1|0) indicating whether or not this donation should be reported to the tax authority in the donor’s country. *Not applicable in the U.S.
+personalIdentificationNumber – The national id number assigned to the donor who wants the donation reported to the tax authority. If the customer does not want the donation reported, just pass a blank string here.  *Not applicable in the U.S.
+donationMessage – Message from donor to the charity.
+honorMemoryName – Name of individual or organization that the donation was made to honor.
+pledgeId – A user defined field that persists to the NPO report linking the transaction from your page to the FirstGiving System.
+campaignName – A free-text field that persists to the NPO report notifying the NPO of the user defined Campaign Name.  If the Campaign Name ranks within the top 5 campaigns during the pay cycle, the Campaign Name will also appear on the NPO check stub.
+*/
+}
 
 /*
     NAVIGATION

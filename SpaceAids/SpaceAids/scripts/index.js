@@ -173,6 +173,9 @@ function enemyReset(number) {
 
 function starsMove() {
 
+
+    window.scrollTo(0, 0);
+
     margin_top_num_1++;
     margin_top_num_2++;
     margin_btm_num_1--;
